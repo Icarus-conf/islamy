@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             backgroundColor: Colors.transparent,
-            title: const elMessiri(
+            title: const Amiri(
               text: 'إسلامي',
               fontS: 30,
               fontWeight: FontWeight.w700,

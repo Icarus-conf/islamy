@@ -21,7 +21,7 @@ class _SuraDetailsState extends State<SuraDetails> {
 
   suraReader(int index) async {
     final sura = await rootBundle.loadString('assets/files/${index + 1}.txt');
-    final List<String> lines = sura.split('\n');
+    final List<String> lines = sura.trim().split('\n');
     verses = lines;
     setState(() {});
     return verses;
@@ -50,7 +50,7 @@ class _SuraDetailsState extends State<SuraDetails> {
           appBar: AppBar(
             elevation: 0,
             backgroundColor: Colors.transparent,
-            title: elMessiri(
+            title: Amiri(
               text: suraModel.name,
               fontS: 30,
               fontWeight: FontWeight.w700,
@@ -73,19 +73,22 @@ class _SuraDetailsState extends State<SuraDetails> {
                     padding: const EdgeInsets.all(12.0),
                     child: ListView.separated(
                       separatorBuilder: (context, index) {
-                        return const Divider(
-                          color: primaryColor,
+                        return const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 10),
+                          child: Divider(
+                            color: primaryColor,
+                          ),
                         );
                       },
                       itemCount: verses.length,
                       itemBuilder: (context, index) {
-                        return elMessiri(
+                        return Amiri(
                           text: '${verses[index].trim()} (${index + 1})',
                           fontS: 20,
                           fontWeight: FontWeight.w600,
-                          letterSpacing: 0.8,
+                          letterSpacing: 1.1,
                           textDirection: TextDirection.rtl,
-                          textAlign: TextAlign.center,
+                          textAlign: TextAlign.right,
                           color: Theme.of(context).colorScheme.secondary,
                         );
                       },

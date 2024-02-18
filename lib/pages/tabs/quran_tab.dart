@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:islamy/components/constants/colors.dart';
+import 'package:islamy/components/sura_verses_number.dart';
 import 'package:islamy/widgets/sura_details.dart';
 import 'package:islamy/components/sura_names.dart';
 import 'package:islamy/components/text_format.dart';
@@ -28,7 +29,7 @@ class _QuranTabState extends State<QuranTab> {
             color: primaryColor,
             thickness: 3,
           ),
-          const elMessiri(
+          const Amiri(
             text: 'اسم السورة',
             fontS: 25,
             textAlign: TextAlign.center,
@@ -56,13 +57,23 @@ class _QuranTabState extends State<QuranTab> {
                       arguments: SuraModel(name: suraName[index], index: index),
                     );
                   },
-                  child: Text(
-                    suraName[index],
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w400,
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        ' (${versesNumber[index]} عدد الآيات)',
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        '${suraName[index]}',
+                        style: const TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
                   ),
                 );
               },

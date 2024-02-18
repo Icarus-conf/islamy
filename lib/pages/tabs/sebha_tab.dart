@@ -55,7 +55,7 @@ class _SebhaTabState extends State<SebhaTab> {
           const SizedBox(
             height: 25,
           ),
-          const elMessiri(
+          const Amiri(
             text: 'عدد التسبيحات',
             fontS: 25,
           ),

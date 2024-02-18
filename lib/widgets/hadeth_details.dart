@@ -34,29 +34,28 @@ class _HadethDeatailsState extends State<HadethDetails> {
             backgroundColor: Colors.transparent,
           ),
           backgroundColor: Colors.transparent,
-          body: SafeArea(
-            child: Container(
-              margin: const EdgeInsets.all(25),
-              padding: const EdgeInsets.all(25),
-              decoration: BoxDecoration(
-                color:
-                    Theme.of(context).colorScheme.onBackground.withOpacity(0.8),
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: ListView.builder(
-                itemCount: ahadeth.content.length,
-                itemBuilder: (context, index) {
-                  return elMessiri(
-                    text: ahadeth.content[index],
-                    letterSpacing: 1.2,
-                    fontS: 20,
-                    textDirection: TextDirection.rtl,
-                    textAlign: TextAlign.center,
-                    color: Theme.of(context).colorScheme.secondary,
-                    fontWeight: FontWeight.w600,
-                  );
-                },
-              ),
+          body: Container(
+            height: MediaQuery.of(context).size.height * 0.5,
+            margin: const EdgeInsets.all(25),
+            padding: const EdgeInsets.all(25),
+            decoration: BoxDecoration(
+              color:
+                  Theme.of(context).colorScheme.onBackground.withOpacity(0.8),
+              borderRadius: BorderRadius.circular(25),
+            ),
+            child: ListView.builder(
+              itemCount: ahadeth.content.length,
+              itemBuilder: (context, index) {
+                return Amiri(
+                  text: ahadeth.content[index],
+                  letterSpacing: 1.2,
+                  fontS: 20,
+                  textDirection: TextDirection.rtl,
+                  textAlign: TextAlign.right,
+                  color: Theme.of(context).colorScheme.secondary,
+                  fontWeight: FontWeight.w600,
+                );
+              },
             ),
           ),
         ),

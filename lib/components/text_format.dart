@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class elMessiri extends StatelessWidget {
+class Amiri extends StatelessWidget {
   final String text;
   final double fontS;
   final Color? color;
@@ -12,7 +12,7 @@ class elMessiri extends StatelessWidget {
   final double? letterSpacing;
   final TextDirection? textDirection;
 
-  const elMessiri({
+  const Amiri({
     super.key,
     required this.text,
     required this.fontS,

@@ -47,7 +47,7 @@ class _HadethTabState extends State<HadethTab> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 25),
+      padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Column(
         children: [
           Image.asset('assets/images/hadeth_logo.png'),
@@ -55,7 +55,7 @@ class _HadethTabState extends State<HadethTab> {
             color: primaryColor,
             thickness: 3,
           ),
-          const elMessiri(
+          const Amiri(
             text: 'الأحاديث',
             fontS: 25,
             textAlign: TextAlign.center,
